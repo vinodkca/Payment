@@ -1,0 +1,49 @@
+Setting Up Your Gateway Test Parameters
+-----------------------------------------
+Merchant ID  : 496160873888
+Test Site    : fts.cardconnect.com:6443
+API Username 
+& Password   : testing:testing123
+
+Confirming Your Test Transactions
+---------------------------------
+CardConnect UI  : https://fts.cardconnect.com:6443/cardconnect
+Login Name      :  cardconnect
+Password        :  cconnect!49
+
+
+------------------------------------------
+
+
+
+Setting Up Your Gateway Test Parameters
+Merchant ID
+(MID)
+Platform identifier required to be included in API calls from your ERP application
+to the CardConnect demo system. Once your interface is live, you will be
+assigned a unique ID from the processor. During development and testing, you
+can use this test merchant ID.
+496160873888
+Test Site
+The test site will be the target of your API calls and is available immediately as
+part of our on-going commitment to the CardConnect integration program. fts.cardconnect.com:6443
+Note: Please be sure to submit transactions using ONLY test card data. The test
+environment and its data is visible by other merchants.
+API Username & Password
+API username and password, contained in a single string. This string should be
+Base64 encoded and used as the authorization header of your request. See the
+associated sample code for an example of how to embed the item into your code.
+testing:testing123
+Confirming Your Test Transactions
+CardConnect UI
+Once you start sending authorization and settlement calls to CardConnect, you can use
+the CardConnect Admin credentials to log in and view details about the transactions.
+https://
+fts.cardconnect.com:6443/
+cardconnect
+Login Name
+Username used to log into the CardConnect UI
+cardconnect
+Password
+Password associated with the CardConnect UI username
+cconnect!49
