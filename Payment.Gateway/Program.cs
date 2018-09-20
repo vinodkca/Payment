@@ -1,19 +1,50 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using CardConnectRestClientExample;
+using Newtonsoft.Json.Linq;
 using System;
-
+using Payment.Gateway.Common;
 namespace Payment.Gateway
 {
     class Program
     {
-        public static string END = "https://fts.cardconnect.com:6443";
-        public static string USERNAME = "cardconnect";
-        public static string PASSWORD = "cconnect!49";
+
+        private static String ENDPOINT = "https://fts.cardconnect.com:6443/cardconnect/rest";
+        private static String USERNAME = "testing";
+        private static String PASSWORD = "testing123";
+
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            DateTime startTime = DateTime.Now;
+
+            StartLogging(startTime);
+
+            Logger.LogMissingInfo("Log", "CardConnect", "START: authTransaction()");
+            authTransaction();
+            Logger.LogMissingInfo("Log", "CardConnect", "END : authTransaction()");
+
+            EndLogging(startTime);
+
+            //CardConnectRestClientExample.CardConnectRestClientExample.authTransaction();
+
+            Console.ReadLine();
         }
 
+        private static void EndLogging(DateTime startTime)
+        {
+            DateTime endTime = DateTime.Now;
+            TimeSpan span = endTime.Subtract(startTime);
+            String diff = String.Format("{0} hours, {1} minutes, {2} seconds.", span.Hours, span.Minutes, span.Seconds);
+            Logger.LogMissingInfo("Log", "CardConnect", "Total Time: " + diff);
+            Logger.LogMissingInfo("Log", "CardConnect", "END DATE: " + DateTime.Now.ToString());
+        }
+
+        private static void StartLogging(DateTime startTime)
+        {
+            Logger.LogMissingInfo("Log", "CardConnect", string.Empty);
+            Logger.LogMissingInfo("Log", "CardConnect", "START DATE: " + startTime);
+
+        }
 
         public static String authTransaction()
         {
@@ -22,7 +53,7 @@ namespace Payment.Gateway
             // Create Authorization Transaction request
             JObject request = new JObject();
             // Merchant ID
-            request.Add("merchid", "123456789012");
+            request.Add("merchid", "496160873888");
             // Card Type
             request.Add("accttype", "VI");
             // Card Number
