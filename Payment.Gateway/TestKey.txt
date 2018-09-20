@@ -11,10 +11,18 @@ CardConnect UI  : https://fts.cardconnect.com:6443/cardconnect
 Login Name      :  cardconnect
 Password        :  cconnect!49
 
-
+---
+In PM
+Install-Package Newtosoft.Json
 ------------------------------------------
+// for Error encountered while pushing to the remote repository: Git failed with a fatal error.
+fatal: HttpRequestException encountered.
+   An error occurred while sending the request.
+error: cannot spawn askpass: No such file or directory
 
+git config --global credential.helper wincred
 
+---------------
 
 Setting Up Your Gateway Test Parameters
 Merchant ID
